@@ -1,0 +1,27 @@
+<div class="contenedor-general">
+    
+    <div id="contenedor">
+        <div id="central">
+            <div id="login">
+                <div class="titulo">Bienvenido</div>
+
+                <form [formGroup]="loginForm" (ngSubmit)="auth()" id="loginform">
+                    <input type="text" id="user" formControlName="user" placeholder="Usuario" required>
+                    <div class="validacion" *ngIf="loginForm.get('user')?.hasError('required') &&  loginForm.get('user')?.touched" >Nombre de usuario obligatorio</div>
+
+                    <input type="password" id="password" formControlName="password" placeholder="Contraseña" required>
+                    <div class="validacion" *ngIf="loginForm.get('password')?.hasError('required') &&  loginForm.get('password')?.touched" >Clave es 0bligatoria</div>
+    
+
+                    <button type="submit" [disabled]="loginForm.invalid">Login</button>
+                </form>
+                <div class="pie-form">
+                    <a href="#">¿Perdiste tu contraseña?</a>
+                    <a href="#">¿No tienes Cuenta? Registrate</a>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+
+</div>

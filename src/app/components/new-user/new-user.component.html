@@ -1,0 +1,59 @@
+
+<div class="pt-3">
+  <h2 class="mb-2 text-center">New User</h2>
+
+  <form [formGroup]="newUserForm" (ngSubmit)="newUser()" id="newUserForm"
+  class="container pb-2" style="width: 400px; max-width: 100%; ">
+    
+    <div class="mb-3">
+      <label for="user" class="form-label">User</label>
+      <input formControlName="user" required 
+        type="text" class="form-control" id="user">
+      <div class="validacion" *ngIf="newUserForm.get('user')?.hasError('required') &&  newUserForm.get('user')?.touched" >Usuario obligatorio</div>
+      
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input formControlName="password" required
+        type="password" class="form-control" id="password">
+      <div class="validacion" *ngIf="newUserForm.get('password')?.hasError('required') &&  newUserForm.get('password')?.touched" >Clave obligatorio</div>
+    </div>
+    <div class="mb-3">
+      <label for="name" class="form-label">User Name</label>
+      <input formControlName="name" required
+        type="text" class="form-control" id="name">
+      <div class="validacion" *ngIf="newUserForm.get('name')?.hasError('required') &&  newUserForm.get('name')?.touched" >Nombre de usuario obligatorio</div>
+      
+    </div>
+    <div class="mb-3">
+      <label for="last_name" class="form-label">Last name</label>
+      <input formControlName="last_name" required
+        type="text" class="form-control" id="last_name">
+      <div class="validacion" *ngIf="newUserForm.get('last_name')?.hasError('required') &&  newUserForm.get('last_name')?.touched" >Apellido obligatorio</div>
+      
+    </div>
+
+    <div class="mb-3">
+      <label for="type_user" class="form-label">TypeUser</label>
+      <select formControlName="type_user"
+        class="form-select" id="type_user" required>
+        <option selected disabled value="">Choose...</option>
+        <option value="1">Admin</option>
+        <option value="2">Gerente</option>
+      </select>
+      <div class="invalid-feedback">
+        Please select a valid state.
+      </div>
+      <div class="validacion" *ngIf="newUserForm.get('type_user')?.hasError('required') &&  newUserForm.get('type_user')?.touched" >Tipo de usuario obligatorio</div>
+
+    </div>
+  
+    <div class="container d-flex justify-content-between">
+      <button type="submit"  class="btn btn-primary" [disabled]="newUserForm.invalid">Registrar</button>
+  
+      <a  class="btn btn-primary" href="/welcome">Regresar</a>
+
+    </div>
+  </form>
+
+</div>

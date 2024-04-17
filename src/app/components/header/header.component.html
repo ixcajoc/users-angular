@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-sm bg-body-tertiary ">
+
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/welcome">Empresa</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto d-flex gap-2 align-items-center">
+          <li class="nav-item">{{currentUser.type_user.type}}</li>
+          <li class="nav-item">{{currentUser.name}}</li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" (click)="logout()" style="cursor: pointer;">Cerrar Sesión</a>
+            <!-- <button class="btn btn-primary" (click)="logout()">Cerrar Sesión</button> -->
+
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>

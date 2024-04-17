@@ -1,0 +1,43 @@
+<app-header></app-header>
+<section class="container">
+    
+    <div class="container d-flex justify-content-between align-items-center my-5">
+        <h2>Users</h2>
+        <a class="btn btn-primary" href="/new-user" >New User</a>
+
+
+    </div>
+    <div class="row text-center ">
+
+        <!-- Si el usuario es administrador mostrar todos los usuarios
+        sino, mostrar todos menos los de administradores -->
+
+        
+        @if (currentUser.type_user.type === "Admin") {
+            <h3>Vista de {{currentUser.type_user.type}}</h3>
+            @for (user of usersData; track $index) {
+                <div class="col d-flex my-2 justify-content-center">
+                    <app-user-card [user]="user"></app-user-card>
+                </div>
+            }
+
+        }@else {
+            <h3>Vista de {{currentUser.type_user.type}}</h3>
+            @for (user of usersData; track $index) {
+                @if (user.type_user.type !=='Admin') {
+                    <div class="col d-flex my-2 justify-content-center">
+                        <app-user-card [user]="user"></app-user-card>
+
+                    </div>
+                }
+            }
+        
+        }
+
+        
+    </div>
+
+
+</section>
+
+<app-footer/>
