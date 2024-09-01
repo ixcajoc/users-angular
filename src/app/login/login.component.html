@@ -6,10 +6,21 @@
                 <div class="titulo">Bienvenido</div>
 
                 <form [formGroup]="loginForm" (ngSubmit)="auth()" id="loginform">
-                    <input type="text" id="user" formControlName="user" placeholder="Usuario" required>
+                    <input type="text" id="user" formControlName="user" placeholder="Usuario" required autocomplete="off">
                     <div class="validacion" *ngIf="loginForm.get('user')?.hasError('required') &&  loginForm.get('user')?.touched" >Nombre de usuario obligatorio</div>
 
-                    <input type="password" id="password" formControlName="password" placeholder="Contraseña" required>
+                    <div>
+                        <div class="row d-flex justify-content-between">
+                            <div class="col">
+                                <input type="password" id="password" formControlName="password" placeholder="Contraseña" required>
+
+                            </div>
+                            <!-- <div class="col-4">
+    
+                                <button type="button" class="btn btn-info">Info</button>
+                            </div> -->
+                        </div>
+                    </div>
                     <div class="validacion" *ngIf="loginForm.get('password')?.hasError('required') &&  loginForm.get('password')?.touched" >Clave es 0bligatoria</div>
     
 

@@ -5,6 +5,8 @@ import { AuthService } from '../../../services/auth-service.service';
 import { User, UserAlone } from '../../../interfaces/type-user.interface';
 import { HeaderComponent } from '../../header/header.component';
 
+//cambiar opciones a espaniol
+
 @Component({
   selector: 'app-user-information',
   standalone: true,
@@ -14,7 +16,7 @@ import { HeaderComponent } from '../../header/header.component';
   <app-header/>
 
   <div class="container text-center">
-    <h1 class="my-5">User Information</h1>
+    <h1 class="my-5">Información de usuario</h1>
     <div class="d-flex justify-content-center">
       
       <div class="card" *ngIf="user" style="width: 18rem;">

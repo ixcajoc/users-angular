@@ -5,7 +5,7 @@ import { AuthService } from '../services/auth-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
-
+//quitar el sugerencia de usuarios, o el autocmpletado
 @Component({
   selector: 'app-login',
   standalone: true,
